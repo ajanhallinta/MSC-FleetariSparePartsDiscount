@@ -6,7 +6,7 @@ namespace FleetariPartDiscount
     public class FleetariPartDiscount : Mod
     {
         public override string ID => "FleetariPartDiscount"; //Your mod ID (unique)
-        public override string Name => "Fleetari Parts Discount"; //You mod name
+        public override string Name => "Fleetari Spare Parts Discount"; //You mod name
         public override string Author => "ajanhallinta"; //Your Username
         public override string Version => "1.0"; //Version
         public override string Description => "Apply Fleetari's discount to spare parts."; //Short description of your mod
