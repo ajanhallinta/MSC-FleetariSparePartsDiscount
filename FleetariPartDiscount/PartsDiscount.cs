@@ -6,7 +6,7 @@ namespace FleetariPartDiscount
 {
     public class PartsDiscount : MonoBehaviour
     {
-        private static void DebugPrint(string msg)
+        public static void DebugPrint(string msg)
         {
             MSCLoader.ModConsole.Print("Discount: " + msg);
         }

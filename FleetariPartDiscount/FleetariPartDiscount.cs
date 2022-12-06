@@ -8,7 +8,7 @@ namespace FleetariPartDiscount
         public override string ID => "FleetariPartDiscount"; //Your mod ID (unique)
         public override string Name => "Fleetari Spare Parts Discount"; //You mod name
         public override string Author => "ajanhallinta"; //Your Username
-        public override string Version => "1.0"; //Version
+        public override string Version => "1.1"; //Version
         public override string Description => "Apply Fleetari's discount to spare parts."; //Short description of your mod
 
         public override void ModSetup()
@@ -39,7 +39,17 @@ namespace FleetariPartDiscount
             // Called once, when mod is loading after game is fully loaded
             GameObject go = new GameObject();
             go.name = "Spare Parts Discount";
-            go.transform.parent = GameObject.Find("REPAIRSHOP").transform.GetChild(7).GetChild(9).GetChild(3);
+
+            try
+            {
+                go.transform.parent = GameObject.Find("REPAIRSHOP").transform.GetChild(14).GetChild(9).GetChild(3); // REPAIRSHOP/LOD/Store/Parts
+            }
+            catch
+            {
+                PartsDiscount.DebugPrint("Error: Can't find REPAIRSHOP/LOD/Store/Parts!");
+                return;
+            }
+
             go.AddComponent<PartsDiscount>();
         }
     }
